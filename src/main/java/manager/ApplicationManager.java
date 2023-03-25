@@ -6,7 +6,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 
-
 public class ApplicationManager {
 
     WebDriver wd;
@@ -20,18 +19,19 @@ public class ApplicationManager {
         wd.manage().window().maximize();
         wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         wd.navigate().to("https://ilcarro.web.app/");
-
         helperUser = new HelperUser(wd);
 
-    }
-
-    public HelperUser getHelperUser() {
-        return helperUser;
     }
 
     public void stop(){
 
         wd.quit();
     }
+
+    public HelperUser getHelperUser() {
+        return helperUser;
+    }
+
+
 
 }
